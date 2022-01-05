@@ -1,9 +1,11 @@
 import React from 'react';
+import AppRoutes from './routes/AppRoutes';
 
 const App = () => {
   return (
     <div>
-      Auth project
+      <h1>Auth project</h1>
+      <AppRoutes />
     </div>
   );
 }
