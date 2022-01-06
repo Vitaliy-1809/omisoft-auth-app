@@ -10,7 +10,7 @@ const ProtectedRoute = ({ children, ...rest }) => {
   const isLoading = useSelector(userSelectors.getIsLoading())
 
   if (isLoading) {
-    return <BackdropLoader open={isLoading}/>
+    return <BackdropLoader open={isLoading} />
   }
 
   return (
@@ -21,7 +21,7 @@ const ProtectedRoute = ({ children, ...rest }) => {
 }
 
 ProtectedRoute.propTypes = {
-	children: PropTypes.object
+  children: PropTypes.object
 }
 
 export default ProtectedRoute;
