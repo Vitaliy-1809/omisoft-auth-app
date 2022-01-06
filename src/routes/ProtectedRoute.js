@@ -1,11 +1,11 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
-import { Route, Navigate } from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
 import { userSelectors } from '../store/user';
 import BackdropLoader from '../components/BackdropLoader/BackdropLoader'
 import PropTypes from 'prop-types';
 
-const ProtectedRoute = ({ children, ...rest }) => {
+const ProtectedRoute = ({ children }) => {
   const token = useSelector(userSelectors.getToken())
   const isLoading = useSelector(userSelectors.getIsLoading())
 
@@ -13,11 +13,11 @@ const ProtectedRoute = ({ children, ...rest }) => {
     return <BackdropLoader open={isLoading} />
   }
 
-  return (
-    <Route {...rest}>
-      {token ? children : <Navigate to='/login' />}
-    </Route>
-  );
+  if (!token) {
+    return <Navigate to='/login' />
+  }
+
+  return children;
 }
 
 ProtectedRoute.propTypes = {
