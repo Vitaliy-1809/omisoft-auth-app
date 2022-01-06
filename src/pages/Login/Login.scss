@@ -1,0 +1,34 @@
+.form-container {
+	display: flex;
+  justify-content: center;
+  align-items: center;
+	height: 100vh;
+}
+
+.form {
+	background-color: #fff;
+	border-radius: 5px;
+	min-width: 320px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.formStatusBlock {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding-top: 10px;
+	padding-bottom: 10px;
+}
+
+.error {
+  color: red;
+  font-size: 15px;
+}
+
+.success {
+	color: green;
+	font-size: 15px;
+}

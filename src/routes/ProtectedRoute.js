@@ -5,7 +5,8 @@ import { userSelectors } from '../store/user';
 import BackdropLoader from '../components/BackdropLoader/BackdropLoader'
 import PropTypes from 'prop-types';
 
-const ProtectedRoute = ({ isLoggedIn, children, ...rest }) => {
+const ProtectedRoute = ({ children, ...rest }) => {
+  const token = useSelector(userSelectors.getToken())
   const isLoading = useSelector(userSelectors.getIsLoading())
 
   if (isLoading) {
@@ -14,13 +15,12 @@ const ProtectedRoute = ({ isLoggedIn, children, ...rest }) => {
 
   return (
     <Route {...rest}>
-      {isLoggedIn ? children : <Navigate to='/login' />}
+      {token ? children : <Navigate to='/login' />}
     </Route>
   );
 }
 
 ProtectedRoute.propTypes = {
-	isLoggedIn: PropTypes.bool,
 	children: PropTypes.object
 }
 

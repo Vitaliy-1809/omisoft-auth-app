@@ -7,11 +7,12 @@ import Error404 from '../pages/Error404/Error404'
 import Login from '../pages/Login/Login'
 
 const AppRoutes = () => {
-  const isLoggedIn = useSelector(userSelectors.getToken())
+  const token = useSelector(userSelectors.getToken())
 
   return (
     <Routes>
-      {isLoggedIn && <Route path='/' element={<Navigate replace to='/login' />} />}
+      {token && <Route path='/login' element={<Navigate replace to='/' />} />}
+      {!token && <Route path='/' element={<Navigate replace to='/login' />} />}
       <Route exact path='/' element={<Main />} />
       <Route exact path='/login' element={<Login />} />
       <Route path='*' element={<Error404 />} />
