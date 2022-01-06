@@ -10,14 +10,14 @@ const userSlice = createSlice({
   name: 'user',
   initialState,
   reducers: {
-    setToken(state, action) {
+    setToken (state, action) {
       const { token } = action.payload
       state.token = token
       if (token) {
         localStorage.setItem('userToken', token)
       }
     },
-    logOut(state) {
+    logOut (state) {
       localStorage.removeItem('userToken')
       state.token = null
       return state

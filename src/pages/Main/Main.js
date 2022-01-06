@@ -9,8 +9,7 @@ const Main = () => {
 
   const logOutUser = () => {
     dispatch(userOperations.logOut())
-    // snackActions.success('Successfully logged out')
-    alert('Successfully logged out')
+    snackActions.success('You successfully logged Out')
   }
 
   return (

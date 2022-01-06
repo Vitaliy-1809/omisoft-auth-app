@@ -6,13 +6,18 @@ import { Provider } from 'react-redux';
 import store from './store/index'
 import { BrowserRouter } from 'react-router-dom';
 import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
+import { SnackbarProvider } from 'notistack';
+import { SnackbarUtilsConfigurator } from './utils/customHooks/useSnackBarUtils';
 
 ReactDOM.render(
   <React.StrictMode>
     <ErrorBoundary>
       <Provider store={store}>
         <BrowserRouter>
-          <App />
+          <SnackbarProvider>
+            <SnackbarUtilsConfigurator />
+            <App />
+          </SnackbarProvider>
         </BrowserRouter>
       </Provider>
     </ErrorBoundary>

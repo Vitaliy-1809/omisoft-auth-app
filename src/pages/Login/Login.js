@@ -24,8 +24,7 @@ const Login = () => {
           await login(values)
         } catch (e) {
           setServerResult({ error: 'Wrong login or password' })
-          // snackActions.warning('Wrong login or password')
-          alert('Wrong login or password')
+          snackActions.warning('Wrong login or password')
         }
       }}
     >
@@ -54,7 +53,7 @@ const Login = () => {
 
               {serverResult && serverResult.error && (
                 <Box className='formStatusBlock'>
-                  <p className=''>{serverResult.error}</p>
+                  <p className='error'>{serverResult.error}</p>
                 </Box>
               )}
 

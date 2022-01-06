@@ -3,6 +3,6 @@ const getIsLoading = () => state => state.user.isLoading
 
 // eslint-disable-next-line import/no-anonymous-default-export
 export default {
-	getToken,
-	getIsLoading,
+  getToken,
+  getIsLoading,
 }
