@@ -1,29 +1,26 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { TextField } from '@mui/material'
-import { makeStyles } from '@mui/styles'
+import { styled } from '@mui/material/styles'
 import './CustomInput.scss'
 
-const useStyles = makeStyles(() => ({
-  noBorder: {
-    border: 'none',
+const StyledTextField = styled(TextField)({
+  '& .MuiOutlinedInput-root': {
+    '& fieldset': {
+      border: 'none',
+    },
   },
-}));
+})
 
 const CustomInput = ({ field, form, ...rest }) => {
   const { name, placeholder } = field
-  const classes = useStyles();
 
   return (
     <div style={{ marginTop: 10 }}>
-      <TextField
+      <StyledTextField
         size="small"
         sx={{ width: 300, borderRadius: 50, background: '#E6e6e6' }}
         label={placeholder}
-        fullWidth={true}
-        InputProps={{
-          classes: { notchedOutline: classes.noBorder }
-        }}
         {...rest}
         {...field}
       />

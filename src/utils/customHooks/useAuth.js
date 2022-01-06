@@ -14,7 +14,7 @@ const useAuth = () => {
       // save token to store (and localStorage)
       dispatch(userOperations.setToken({ token: res.data.token }))
 
-      snackActions.success('You successfully Logged In')
+      snackActions.success('You successfully logged in')
       return true
     }
     snackActions.warning('Wrong login or password')

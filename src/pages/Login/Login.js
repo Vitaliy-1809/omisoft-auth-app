@@ -1,13 +1,16 @@
 import { Formik, Form, Field } from 'formik';
 import React, { useState } from 'react';
+import './Login.scss';
 import FormSchema from './FormSchema/FormSchema';
 import { snackActions } from '../../utils/customHooks/useSnackBarUtils';
 import CustomInput from '../../components/CustomInput/CustomInput';
 import { Link } from 'react-router-dom';
-import './Login.scss';
-import { Box } from '@mui/material';
+import { Box, InputAdornment } from '@mui/material';
 import useAuth from '../../utils/customHooks/useAuth';
 import { ColorButton } from '../../components/Button/Button';
+import EmailIcon from '@mui/icons-material/Email';
+import LockIcon from '@mui/icons-material/Lock';
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
 
 const Login = () => {
   const [serverResult, setServerResult] = useState(null)
@@ -40,20 +43,6 @@ const Login = () => {
 
               <Field
                 component={CustomInput}
-                label='Email'
-                name="email"
-                type="text"
-              />
-              <Field
-                data-testid="password"
-                component={CustomInput}
-                label="Password"
-                name="password"
-                type="password"
-              />
-
-              {/* <Field
-                component={CustomInput}
                 placeholder='Email'
                 name="email"
                 type="text"
@@ -62,8 +51,7 @@ const Login = () => {
                     <InputAdornment position="start">
                       <EmailIcon fontSize='small' />
                     </InputAdornment>
-                  ),
-                  classes: { notchedOutline: classes.noBorder }
+                  )
                 }}
               />
               <Field
@@ -77,10 +65,9 @@ const Login = () => {
                     <InputAdornment position="start">
                       <LockIcon fontSize='small' />
                     </InputAdornment>
-                  ),
-                  classes: { notchedOutline: classes.noBorder }
+                  )
                 }}
-              /> */}
+              />
 
               {serverResult && serverResult.error && (
                 <Box className='formStatusBlock'>
@@ -103,7 +90,7 @@ const Login = () => {
                   formikProps.isSubmitting
                 }
               >
-                LOGIN
+                Login
               </ColorButton>
 
               <div className='login-options'>
@@ -113,7 +100,10 @@ const Login = () => {
                   <Link to="#" className='form-link'>Password</Link> ?
                 </p>
                 <p className='create-account'>
-                  <Link to="#" className='form-link'>Create your Account</Link>
+                  <Link to="#" className='form-link flex'>
+                    Create your Account
+                    <ArrowRightAltIcon fontSize='small' />
+                  </Link>
                 </p>
               </div>
             </Form>
