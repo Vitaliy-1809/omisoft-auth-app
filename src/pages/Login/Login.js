@@ -5,8 +5,9 @@ import { snackActions } from '../../utils/customHooks/useSnackBarUtils';
 import CustomInput from '../../components/CustomInput/CustomInput';
 import { Link } from 'react-router-dom';
 import './Login.scss';
-import { Box, Button } from '@mui/material';
+import { Box } from '@mui/material';
 import useAuth from '../../utils/customHooks/useAuth';
+import { ColorButton } from '../../components/Button/Button';
 
 const Login = () => {
   const [serverResult, setServerResult] = useState(null)
@@ -35,7 +36,7 @@ const Login = () => {
               className='form'
               onSubmit={formikProps.handleSubmit}
             >
-              <h2>Member Login</h2>
+              <h2 className='form-title'>Member Login</h2>
 
               <Field
                 component={CustomInput}
@@ -51,6 +52,36 @@ const Login = () => {
                 type="password"
               />
 
+              {/* <Field
+                component={CustomInput}
+                placeholder='Email'
+                name="email"
+                type="text"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <EmailIcon fontSize='small' />
+                    </InputAdornment>
+                  ),
+                  classes: { notchedOutline: classes.noBorder }
+                }}
+              />
+              <Field
+                data-testid="password"
+                component={CustomInput}
+                placeholder="Password"
+                name="password"
+                type="password"
+                InputProps={{
+                  startAdornment: (
+                    <InputAdornment position="start">
+                      <LockIcon fontSize='small' />
+                    </InputAdornment>
+                  ),
+                  classes: { notchedOutline: classes.noBorder }
+                }}
+              /> */}
+
               {serverResult && serverResult.error && (
                 <Box className='formStatusBlock'>
                   <p className='error'>{serverResult.error}</p>
@@ -63,27 +94,28 @@ const Login = () => {
                 </Box>
               )}
 
-              <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-                <Button
-                  type='submit'
-                  variant="contained"
-                  direction="form"
-                  disabled={
-                    !formikProps.isValid ||
-                    formikProps.isSubmitting
-                  }
-                >
-                  LOGIN
-                </Button>
-              </Box>
+              <ColorButton
+                variant="contained"
+                type='submit'
+                direction="form"
+                disabled={
+                  !formikProps.isValid ||
+                  formikProps.isSubmitting
+                }
+              >
+                LOGIN
+              </ColorButton>
 
-              <p className=''>
-                Forgot <Link to="#">Username</Link> / <Link to="#">Password</Link> ?
-              </p>
-
-              <p className=''>
-                <Link to="#">Create your Account</Link>
-              </p>
+              <div className='login-options'>
+                <p className='user-info'>
+                  Forgot <Link to="#" className='form-link'>Username</Link>
+                  /
+                  <Link to="#" className='form-link'>Password</Link> ?
+                </p>
+                <p className='create-account'>
+                  <Link to="#" className='form-link'>Create your Account</Link>
+                </p>
+              </div>
             </Form>
           </Box>
         )
