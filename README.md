@@ -38,3 +38,4 @@ fed.lviv@gmail.com - 11111
 
 
 ## Link to deployed project:
+https://omisoft-auth-app.herokuapp.com
