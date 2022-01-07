@@ -1,39 +1,39 @@
 .page-positioning {
 	display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 	height: 100vh;
 }
 
 .form-container {
+	min-width: 320px;
 	background-color: #fff;
 	border-radius: 5px;
-	min-width: 320px;
 
 	@media (min-width: 768px) {
-    min-width: 750px;
 		display: flex;
 		justify-content: space-evenly;
+    min-width: 750px;
   }
 }
 
 .form {
 	display: flex;
 	flex-direction: column;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 }
 
 .form-title {
-	color: #333333;
 	margin: 70px 0 30px;
+	color: #333333;
 	font-size: 22px;
 }
 
 .formStatusBlock {
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 	padding-top: 10px;
 	padding-bottom: 10px;
 }
@@ -63,10 +63,10 @@
 }
 
 .form-link {
-	text-decoration: none;
 	color: #9b9b9b;
 	font-weight: bold;
 	font-size: 12px;
+	text-decoration: none;
 
 	&:hover {
 		color: #333333;
@@ -75,6 +75,6 @@
 
 .flex {
 	display: flex;
-	justify-content: center;
 	align-items: center;
+	justify-content: center;
 }
