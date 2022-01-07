@@ -1,17 +1,17 @@
-import { Formik, Form, Field } from 'formik';
-import React, { useState } from 'react';
-import './Login.scss';
-import FormSchema from './FormSchema/FormSchema';
-import { snackActions } from '../../utils/customHooks/useSnackBarUtils';
-import CustomInput from '../../components/CustomInput/CustomInput';
-import { Link } from 'react-router-dom';
-import { Box, InputAdornment } from '@mui/material';
-import useAuth from '../../utils/customHooks/useAuth';
-import { ColorButton } from '../../components/Button/Button';
-import EmailIcon from '@mui/icons-material/Email';
-import LockIcon from '@mui/icons-material/Lock';
-import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt';
-import FormAvatar from '../../components/FormAvatar/FormAvatar';
+import { Formik, Form, Field } from 'formik'
+import React, { useState } from 'react'
+import './Login.scss'
+import FormSchema from './FormSchema/FormSchema'
+import { snackActions } from '../../utils/customHooks/useSnackBarUtils'
+import CustomInput from '../../components/CustomInput/CustomInput'
+import { Link } from 'react-router-dom'
+import { Box, InputAdornment } from '@mui/material'
+import useAuth from '../../utils/customHooks/useAuth'
+import { ColorButton } from '../../components/Button/Button'
+import EmailIcon from '@mui/icons-material/Email'
+import LockIcon from '@mui/icons-material/Lock'
+import ArrowRightAltIcon from '@mui/icons-material/ArrowRightAlt'
+import FormAvatar from '../../components/FormAvatar/FormAvatar'
 
 const Login = () => {
   const [serverResult, setServerResult] = useState(null)
@@ -115,7 +115,7 @@ const Login = () => {
         )
       }}
     </Formik>
-  );
+  )
 }
 
-export default Login;
+export default Login

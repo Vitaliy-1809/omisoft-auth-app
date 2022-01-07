@@ -12,4 +12,4 @@
   bracketSpacing: true,
   bracketSameLine: true,
   requirePragma: true
-};
+}

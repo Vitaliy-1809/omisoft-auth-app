@@ -1,7 +1,7 @@
-import * as Yup from 'yup';
+import * as Yup from 'yup'
 
-const IS_REQUIRED = 'This field is required';
-const IS_NOT_TRIMMED_ERROR = 'This field must have no spaces before and after';
+const IS_REQUIRED = 'This field is required'
+const IS_NOT_TRIMMED_ERROR = 'This field must have no spaces before and after'
 
 const FormSchema = Yup.object().shape({
   email: Yup
@@ -17,4 +17,4 @@ const FormSchema = Yup.object().shape({
     .max(30, 'Password must be 30 digits maximum'),
 })
 
-export default FormSchema;
+export default FormSchema

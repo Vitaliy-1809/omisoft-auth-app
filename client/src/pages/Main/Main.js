@@ -1,9 +1,9 @@
-import React from 'react';
-import { useDispatch } from 'react-redux';
-import { ColorButton } from '../../components/Button/Button';
-import { userOperations } from '../../store/user';
-import { snackActions } from '../../utils/customHooks/useSnackBarUtils';
-import './Main.scss';
+import React from 'react'
+import { useDispatch } from 'react-redux'
+import { ColorButton } from '../../components/Button/Button'
+import { userOperations } from '../../store/user'
+import { snackActions } from '../../utils/customHooks/useSnackBarUtils'
+import './Main.scss'
 
 const Main = () => {
   const dispatch = useDispatch()
@@ -22,7 +22,7 @@ const Main = () => {
         Logout
       </ColorButton>
     </div>
-  );
+  )
 }
 
-export default Main;
+export default Main

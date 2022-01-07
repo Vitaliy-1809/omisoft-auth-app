@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import Error500 from '../../pages/Error500/Error500';
+import React, { Component } from 'react'
+import Error500 from '../../pages/Error500/Error500'
 
 class ErrorBoundary extends Component {
   state = {
@@ -11,15 +11,15 @@ class ErrorBoundary extends Component {
   }
 
   render () {
-    const { children } = this.props;
-    const { hasError } = this.state;
+    const { children } = this.props
+    const { hasError } = this.state
 
     if (hasError) {
       return <Error500 />
     }
 
-    return children;
+    return children
   }
 }
 
-export default ErrorBoundary;
+export default ErrorBoundary
