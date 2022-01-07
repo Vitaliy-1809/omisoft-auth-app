@@ -9,6 +9,10 @@ const StyledTextField = styled(TextField)({
     '& fieldset': {
       border: 'none',
     },
+    '&.Mui-focused .MuiInputBase-input': {
+      borderTopRightRadius: 50,
+      borderBottomRightRadius: 50,
+    },
   },
 })
 
